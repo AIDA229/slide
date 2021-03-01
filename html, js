@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   
+</head>  
+<body>  
+<div class="slider-container">  
+    <div class="Slide fade">  
+        <img src="beach.jfif" />  
+        <div class="content">Slide1 </div>  
+    </div>  
+    <div class="Slide fade">  
+        <img src="beach1.jpg" />  
+        <div class="content">Slide2 </div>  
+    </div>  
+
+    <div class="Slide fade">  
+        <img src="beach3.jpg" />  
+        <div class="content">Slide3</div>  
+    </div>  
+    <div class="Slide fade">  
+        <img src="sight.jpg" />  
+        <div class="content">Slide4</div>  
+    </div>  
+
+    <a class="left" onclick="nextSlide(-1)">❮</a>  
+    <a class="right" onclick="nextSlide(1)">❯</a>  
+</div>  
+<div class="Slide fade">  
+    <img src="sight1.jpg" />  
+    <div class="content">Slide1 </div>  
+</div>  
+<div class="Slide fade">  
+    <img src="sight2.jpg" />  
+    <div class="content">Slide2 </div>  
+</div>  
+
+<div class="Slide fade">  
+    <img src="sight3.jfif" />  
+    <div class="content">Slide3</div>  
+</div>  
+<div class="Slide fade">  
+    <img src="sight4.jfif" />  
+    <div class="content">Slide4</div>  
+</div>  
+<div class="Slide fade">  
+    <img src="sight5.jpg" />  
+    <div class="content">Slide4</div>  
+</div>  
+<div class="Slide fade">  
+    <img src="sight6.jpg" />  
+    <div class="content">Slide4</div>  
+</div>  
+
+<a class="left" onclick="nextSlide(-1)">❮</a>  
+<a class="right" onclick="nextSlide(1)">❯</a>  
+</div>  
+
+<script type="text/javascript">  
+    var slide_index = 1;  
+    displaySlides(slide_index);  
+
+    function nextSlide(n) {  
+        displaySlides(slide_index += n);  
+    }  
+
+    function currentSlide(n) {  
+        displaySlides(slide_index = n);  
+    }  
+
+    function displaySlides(n) {  
+        var i;  
+        var slides = document.getElementsByClassName("Slide");  
+        if (n > slides.length) { slide_index = 1 }  
+        if (n < 1) { slide_index = slides.length }  
+        for (i = 0; i < slides.length; i++) {  
+            slides[i].style.display = "none";  
+        }  
+        slides[slide_index - 1].style.display = "block";  
+    }  
+</script>  
+
+
+</body>
+</html>
